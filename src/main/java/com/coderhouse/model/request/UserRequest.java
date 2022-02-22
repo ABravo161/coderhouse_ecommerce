@@ -2,7 +2,6 @@ package com.coderhouse.model.request;
 
 import lombok.*;
 
-import javax.validation.constraints.NotNull;
 
 @Setter
 @Getter
@@ -10,11 +9,11 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UserRequest {
-    @NotNull
+    @NonNull
     private String username;
-    @NotNull
+    @NonNull
     private String password;
-    @NotNull
+    @NonNull
     private String email;
     private String phone;
 }

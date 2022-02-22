@@ -2,7 +2,6 @@ package com.coderhouse.model.request;
 
 import lombok.*;
 
-import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -10,11 +9,11 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CartRequest {
-    @NotNull
+    @NonNull
     private String email;
-    @NotNull
+    @NonNull
     private String productCode;
-    @NotNull
+    @NonNull
     private int quantity;
 
 }

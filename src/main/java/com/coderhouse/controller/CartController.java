@@ -9,7 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+
 import java.util.List;
 
 @RestController
@@ -25,19 +25,19 @@ public class CartController {
     }
 
     @PostMapping("/create")
-    public CartResponse createCart(@Valid @RequestBody NewCartRequest newCart) {
+    public CartResponse createCart( @RequestBody NewCartRequest newCart) {
         return service.createCart(newCart);
     }
 
     @PostMapping("/{cartCode}/add")
     public CartResponse create(@PathVariable String cartCode,
-           @Valid @RequestBody CartRequest newItem) throws ApiRestException {
+            @RequestBody CartRequest newItem) throws ApiRestException {
         return service.addToCart(cartCode, newItem);
     }
 
     @PutMapping("/{cartCode}")
     public CartResponse update(@PathVariable String cartCode,
-                                         @Valid @RequestBody CartRequest updatedItem) throws ApiRestException {
+                                          @RequestBody CartRequest updatedItem) throws ApiRestException {
         return service.updateItem(cartCode, updatedItem);
     }
 
